@@ -1,0 +1,22 @@
+{
+    "name": "QUEEN-HANSI-MD-MINI",
+    "description": "Wᴇʙ Sᴇꜱꜱɪᴏɴ Bᴜɪʟᴅᴇʀ Qᴜᴇᴇɴ Hᴀɴꜱɪ Mᴅ Mɪɴɪ.",
+    "logo": "https://i.ibb.co/SzsVXwp/1bf2ea0ee756.jpg",
+    "repository": "https://github.com/username/sesssion name",
+    "keywords": ["Mᴀʟᴠɪɴ-Tᴇᴄʜ"],
+    "success_url": "/", 
+    "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
+    "env": {      
+      "PORT": {
+        "description": "Port for web app.4000,5000,3000... any!",
+        "value": "5000",
+        "required": false 
+      },
+      "MESSAGE": {
+        "description": "Jᴜꜱᴛ Lᴇᴀᴠᴇ Tʜɪꜱ Bʟᴀɴᴋ",
+        "value": "",
+        "required": false 
+      }
+    }   
+
+}
