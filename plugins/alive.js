@@ -92,9 +92,7 @@ const greetings =
 ${alivemsg}
 
 *🌐 Qᴜᴇᴇɴ Hᴀɴꜱɪ Mɪɴɪ Bᴏᴛ Wᴇʙꜱɪᴛᴇ :*
-> ${pairlink}
-
-${footer}`;
+> ${pairlink}`;
 
 const buttons = [
       { buttonId: `${config.PREFIX}ping`, buttonText: { displayText: "PING CMD" }, type: 1 },
