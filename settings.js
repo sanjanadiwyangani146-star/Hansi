@@ -24,7 +24,7 @@ module.exports = {
     AUTO_AI: process.env.AUTO_AI || 'true',
     AUTO_VIEW_STATUS: process.env.AUTO_VIEW_STATUS || 'true',
     AUTO_LIKE_STATUS: process.env.AUTO_LIKE_STATUS || 'true',
-    AUTO_RECORDING: process.env.AUTO_RECORDING || 'false',
+    AUTO_RECORDING: process.env.AUTO_RECORDING || 'true',
     AUTO_TYPING: process.env.AUTO_TYPING || 'false',
     AUTO_READ_MESSAGE: process.env.AUTO_READ_MESSAGE || 'off',
 
@@ -35,7 +35,7 @@ module.exports = {
     // ===== MEDIA / LINKS =====
     IMAGE_PATH: process.env.IMAGE_PATH || 'https://i.ibb.co/SzsVXwp/1bf2ea0ee756.jpg',
     CHANNEL_LINK: process.env.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbCG0yxEwEk21tFzPT16',
-    GROUP_INVITE_LINK: process.env.GROUP_INVITE_LINK || 'https://chat.whatsapp.com/I6Lp7tGGtZE1aHvhtiy3KQ?mode=gi_t',
+    GROUP_INVITE_LINK: process.env.GROUP_INVITE_LINK || 'https://chat.whatsapp.com/LbmbY5xzVXS98KCt6XDWsF?mode=gi_t',
 
     // ===== NEWSLETTER =====
     NEWSLETTER_JID: process.env.NEWSLETTER_JID || '120363405871120956@newsletter',
