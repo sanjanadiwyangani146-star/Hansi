@@ -33,18 +33,18 @@ module.exports = {
       await socket.sendMessage(
         sender,
         {
-          poll: {
-            name: `🖥️ QUEEN HANSI BOT STATUS
+          name: `🖥️ QUEEN HANSI BOT STATUS
 
 🤖 Bot Uptime : ${uptime}`,
-            values: [
-              `📶 Ping : ${ping} ms`,
-              `💾 RAM Used : ${formatBytes(usedMem)}`,
-              `🟢 RAM Free : ${formatBytes(freeMem)}`,
-              `📊 RAM Total : ${formatBytes(totalMem)}`
-            ],
-            selectableCount: 1
-          }
+
+          values: [
+            `📶 Ping : ${ping} ms`,
+            `💾 RAM Used : ${formatBytes(usedMem)}`,
+            `🟢 RAM Free : ${formatBytes(freeMem)}`,
+            `📊 RAM Total : ${formatBytes(totalMem)}`
+          ],
+
+          selectableCount: 1
         },
         { quoted: msg }
       )
@@ -59,4 +59,4 @@ module.exports = {
 
     }
   }
-}
+    }
