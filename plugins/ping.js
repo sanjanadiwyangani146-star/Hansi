@@ -2,7 +2,7 @@ const os = require("os")
 
 module.exports = {
   name: "ping",
-  command: ["ping","status","system"],
+  command: ["ping","pong","speed"],
 
   async execute({ socket, msg, sender }) {
 
@@ -12,7 +12,7 @@ module.exports = {
         const h = Math.floor(seconds / 3600)
         const m = Math.floor((seconds % 3600) / 60)
         const s = Math.floor(seconds % 60)
-        return `${h}h ${m}m ${s}s`
+        return `${h}ʜ ${m}ᴍ ${s}ꜱ`
       }
 
       const uptime = formatUptime(process.uptime())
@@ -36,13 +36,13 @@ module.exports = {
           poll: {
             name: `🖥️ QUEEN HANSI BOT STATUS
 
-🤖 Bot Uptime : ${uptime}`,
+🤖 Bᴏᴛ Uᴘᴛɪᴍᴇ : ${uptime}`,
 
             values: [
-              `📶 Ping : ${ping} ms`,
-              `💾 RAM Used : ${formatBytes(usedMem)}`,
-              `🟢 RAM Free : ${formatBytes(freeMem)}`,
-              `📊 RAM Total : ${formatBytes(totalMem)}`
+              `📶 Pɪɴɢ : ${ping} ᴍꜱ`,
+              `💾 Rᴀᴍ Uꜱᴇᴅ : ${formatBytes(usedMem)}`,
+              `🟢 Rᴀᴍ Fʀᴇᴇ : ${formatBytes(freeMem)}`,
+              `📊 Rᴀᴍ Tᴏᴛᴀʟ : ${formatBytes(totalMem)}`
             ],
 
             selectableCount: 1
@@ -55,10 +55,10 @@ module.exports = {
 
       await socket.sendMessage(
         sender,
-        { text: `❌ Ping Error:\n${err.message}` },
+        { text: `\`❌ Pɪɴɢ Eʀʀᴏʀ\`:\n${err.message}` },
         { quoted: msg }
       )
 
     }
   }
-}
+        }
