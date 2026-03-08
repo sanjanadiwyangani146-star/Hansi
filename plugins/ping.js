@@ -1,9 +1,19 @@
-case 'status':
-case 'ping':
-case 'system': {
-    
+const config = require('../settings');
+const axios = require("axios");
 
-    try {
+module.exports = {
+  name: "ping",
+  command: ["ping", "speed"],
+
+  async execute({ socket, msg, sender }) {
+try {
+
+    await socket.sendMessage(sender, {
+  react: {
+    text: "⚡",
+    key: msg.key
+  }
+});
 
         const formatUptime = (seconds) => {
             const d = Math.floor(seconds / 86400);
