@@ -26,32 +26,30 @@ module.exports = {
 
       const number = target.split("@")[0]
 
-      // 1️⃣ DP Image Send
       await socket.sendMessage(
         sender,
         {
           image:{ url: pp },
-          caption:`👑 *QUEEN HANSI MINI BOT*
+          caption:`\`🕊️ Qᴜᴇᴇɴ Hᴀɴꜱɪ Mᴅ Mɪɴɪ\`
 
-📸 *Royal Profile Picture*
-👤 User : @${number}
+\`📸 Rᴏʏᴀʟ Pʀᴏꜰɪʟᴇ Pɪᴄᴛᴜʀᴇ\`
+\`👤 Uꜱᴇʀ :\` @${number}
 
-✨ Profile Picture Successfully Retrieved`
+*✨ Pʀᴏꜰɪʟᴇ Pɪᴄᴛᴜʀᴇ Sᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ Rᴇᴛʀɪᴇᴠᴇᴅ*`
           ,
           mentions:[target]
         },
         { quoted: msg }
       )
 
-      // 2️⃣ Poll Message owners
       await socket.sendMessage(
         sender,
         {
           poll:{
-            name:"👑 CREATED BY QUEEN HANSI TM",
+            name:"Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴍᴅ ᴍɪɴɪ ᴏᴡɴᴇʀ 🕊️",
             values:[
-              "QUEEN HANSI OWNER 🕊️",
-              "GPT DUMIYH DEV 🕊️"
+              "Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴅᴇᴠ [ ᴏᴡɴᴇʀ ] 🌍️",
+              "Gᴘᴛ ᴅᴜᴍɪʏʜ ᴅᴇᴠ [ ᴄᴏʀᴅᴇʀ ] 🌍"
             ],
             selectableCount:1
           }
@@ -63,11 +61,11 @@ module.exports = {
 
       await socket.sendMessage(
         sender,
-        { text:`❌ GetDP Error\n${err.message}` },
+        { text:`❌ Gᴇᴛᴅᴘ Eʀʀᴏʀ\n${err.message}` },
         { quoted: msg }
       )
 
     }
 
   }
-}
+        }
