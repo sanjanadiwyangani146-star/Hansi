@@ -84,20 +84,20 @@ END:VCARD`
       const systemMessage = `*🖥️ ${botname} Sʏꜱᴛᴇᴍ Iɴꜰᴏ 🖥️*
 
 *╭───────────────●●✿◦*
-*┊* \`🧬 Vᴇʀꜱɪᴏɴ :\` ${version || config.BOT_VERSION}
-*┊* \`✒️ Pʀᴇꜰɪx  :\` ${config.PREFIX}
-*┊* \`🌐 Hᴏꜱᴛ    :\` Hᴇʀᴏᴋᴜ
+*┊* \`🧬 Vᴇʀꜱɪᴏɴ\` : ${version || config.BOT_VERSION}
+*┊* \`✒️ Pʀᴇꜰɪx\`  : ${config.PREFIX}
+*┊* \`🌐 Hᴏꜱᴛ\`    : Hᴇʀᴏᴋᴜ
 *┊*
-*┊* \`🧠 Cᴘᴜ     :\` ${cpuModel}
-*┊* \`🔢 Cᴏʀᴇꜱ   :\` ${cores}
+*┊* \`🧠 Cᴘᴜ\`     : ${cpuModel}
+*┊* \`🔢 Cᴏʀᴇꜱ\`   : ${cores}
 *┊*
-*┊* \`💾 Rᴀᴍ     :\` ${usedMem.toFixed(2)} / ${totalMem.toFixed(2)} GB
-*┊* \`📊 Uꜱᴀɢᴇ   :\` ${ramPercent}%
+*┊* \`💾 Rᴀᴍ\`     : ${usedMem.toFixed(2)} / ${totalMem.toFixed(2)} GB
+*┊* \`📊 Uꜱᴀɢᴇ\`   : ${ramPercent}%
 *┊*
-*┊* \`📟 Uᴘᴛɪᴍᴇ  :\` ${h}ʜ ${m}ᴍ ${s}ꜱ
-*┊* \`⚡ Pɪɴɢ    :\` ${ping} ᴍꜱ
+*┊* \`📟 Uᴘᴛɪᴍᴇ\`  : ${h}ʜ ${m}ᴍ ${s}ꜱ
+*┊* \`⚡ Pɪɴɢ\`    : ${ping} ᴍꜱ
 *┊*
-*┊* \`🤖 Sᴛᴀᴛᴜꜱ  :\` 🟢 Oɴʟɪɴᴇ
+*┊* \`🤖 Sᴛᴀᴛᴜꜱ\`  : 🟢 Oɴʟɪɴᴇ
 *╰───────────────●●✿◦*`;
 
       const buttons = [
