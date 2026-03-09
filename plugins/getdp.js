@@ -43,7 +43,7 @@ module.exports = {
         { quoted: msg }
       )
 
-      // 2️⃣ Poll Message Send
+      // 2️⃣ Poll Message owners
       await socket.sendMessage(
         sender,
         {
