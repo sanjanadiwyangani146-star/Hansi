@@ -96,7 +96,7 @@ END:VCARD`
         menuc += `┊ ┊ ✫ ˚♡ ⋆｡\n`;
         menuc += `┊ ☪︎⋆ ❀\n`;
 		menuc += `> ᴘᴏᴡᴇʀᴅ ʙʏ Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴍɪɴɪ`;
-      );
+    
 
       const buttons = [
         { buttonId: `${config.PREFIX}mainmenu`, buttonText: { displayText: "MAIN MENU" }, type: 1 },
