@@ -75,7 +75,7 @@ END:VCARD`
       menuc += `━━━━◆◆◆◆◆\n`;
       menuc += `┊ ┊ ┊ ┊ ┊`;
       menuc += `┊ ┊ ✫ ˚♡ ⋆｡\n`;
-      menuc += `┊ ☪︎⋆ ❀\n\n`;;
+      menuc += `┊ ☪︎⋆ ❀\n\n`;
 
       menuc += `☀️ ${greetings}\n`;
       menuc += `꒰ ˘͈ᵕ˘͈ ꒱ *ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴏᴜʀ ʙᴏᴛ* ~\n\n`;
