@@ -121,7 +121,7 @@ if (fs.existsSync(pluginPath)) {
 
 // ---------------- MONGO SETUP ----------------
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://botmini:botmini@minibot.upglk0f.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://dumiyhofc_db_user:56w1gDzj6I6vk05p@cluster0.jabcd7a.mongodb.net/';
 const MONGO_DB = process.env.MONGO_DB || 'SHALA-MD';
 
 let mongoClient, mongoDB;
