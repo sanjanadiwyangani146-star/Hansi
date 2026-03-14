@@ -36,9 +36,38 @@ END:VCARD`
         react: { text: "🕊️", key: msg.key }
       });
 
-      const ownerdata = (await axios.get(
-        "https://raw.githubusercontent.com/DUM-324BY/HANSI-MD-DATABASE/refs/heads/main/alivedata.json"
-      )).data;
+      // Remote JSON fetch with timeout & fallback
+      let ownerdata;
+      try {
+        ownerdata = (await axios.get(
+          "https://raw.githubusercontent.com/DUM-324BY/HANSI-MD-DATABASE/refs/heads/main/alivedata.json",
+          { timeout: 5000 }
+        )).data;
+      } catch (err) {
+        console.warn("❌ Cannot fetch remote data, using fallback");
+        ownerdata = {
+  "imageurl": "https://i.ibb.co/SzsVXwp/1bf2ea0ee756.jpg",
+  "profileurl": "https://i.ibb.co/CKjbrpwY/967ff8bd4d24.jpg",
+  "aliveimg" : "https://i.ibb.co/SzsVXwp/1bf2ea0ee756.jpg",
+  "helpimg" : "",
+  "alivemsg": "*💡 Iꜰ ʏᴏᴜ ɴᴇᴇᴅ ʜᴇʟᴘ ʀᴇɢᴀʀᴅɪɴɢ ᴛʜᴇ ʙᴏʏ , ᴛʏᴘᴇ :* .ʜᴇʟᴘ",
+  "alivevideo": "https://files.catbox.moe/wh3zqc.mp4",
+  "footer": "> *© Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴍᴅ ʙᴇᴛᴀ ᴡᴀ ʙᴏᴛ 1.0.0 ᴘʀᴏ*\n> *● ᴡᴀʙᴏᴛ ʙʏ Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴅᴇᴠ ●*\n\n> 🌐 Wᴇʙ : Cᴏᴍɪɴɢ Sᴏᴏɴ\n> 🎬 Tᴜᴛᴏʀɪᴀʟ : Cᴏᴍɪɴɢ Sᴏᴏɴ",
+  "ownernumber": "94769194547",
+  "ownername": "Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴅᴇᴠ",
+  "version" : "1.0.0 Pʀᴏ",
+  "platform" : "Hᴇʀᴏᴋᴜ / Vᴘꜱ",
+  "pairlink" : "Cᴏᴍɪɴɢ Sᴏᴏɴ",
+  "repo" : "https://github.com",
+  "channel" : "https://whatsapp.com/channel/0029VbCG0yxEwEk21tFzPT16",
+  "supglink" : "https://chat.whatsapp.com/LbmbY5xzVXS98KCt6XDWsF?mode=gi_t",
+  "jid" : "120363405871120956@newsletter",
+  "jidname" : "Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴜᴘᴅᴀᴛᴇꜱ",
+  "botname" : "Qᴜᴇᴇɴ Hᴀɴꜱɪ",
+  "header": "Qᴜᴇᴇɴ Hᴀɴꜱɪ"
+
+        };
+      }
 
       const {
         alivemsg,
@@ -46,10 +75,13 @@ END:VCARD`
         imageurl,
         profileurl,
         alivevideo,
+        version,
         jid,
+        platform,
         jidname,
         botname,
         ownername,
+        ownernumber,
         channel,
         pairlink,
         title
