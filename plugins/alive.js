@@ -18,11 +18,11 @@ module.exports = {
       },
       message: {
         contactMessage: {
-          displayName: "QUEEN HANSI",
+          displayName: "Qᴜᴇᴇɴ ʜᴀɴꜱɪ",
           vcard: `BEGIN:VCARD
 VERSION:3.0
-N:QUEEN HANSI;;;;
-FN:QUEEN HANSI
+N:Qᴜᴇᴇɴ ʜᴀɴꜱɪ;;;;
+FN:Qᴜᴇᴇɴ ʜᴀɴꜱɪ
 ORG:Meta Platforms
 TEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002
 END:VCARD`
