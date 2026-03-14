@@ -95,9 +95,17 @@ ${alivemsg}
 ${footer}`;
 
       const buttons = [
-        { buttonId: `${config.PREFIX}ping`, buttonText: { displayText: "Pɪɴɢ Cᴍᴅ" }, type: 1 },
-        { buttonId: `${config.PREFIX}menu`, buttonText: { displayText: "Mᴇɴᴜ Cᴍᴅ" }, type: 1 }
-      ];
+  {
+    buttonId: `${config.PREFIX}ping`,
+    buttonText: { displayText: "Pɪɴɢ Cᴍᴅ" },
+    type: 1
+  },
+  {
+    buttonId: `${config.PREFIX}menu`,
+    buttonText: { displayText: "Mᴇɴᴜ Cᴍᴅ" },
+    type: 1
+  }
+];
 
       await socket.sendMessage(
         sender,
