@@ -33,10 +33,7 @@ END:VCARD`
     try {
 
       await socket.sendMessage(sender, {
-        react: {
-          text: "🕊️",
-          key: msg.key
-        }
+        react: { text: "🕊️", key: msg.key }
       });
 
       const ownerdata = (await axios.get(
@@ -49,13 +46,10 @@ END:VCARD`
         imageurl,
         profileurl,
         alivevideo,
-        version,
         jid,
-        platform,
         jidname,
         botname,
         ownername,
-        ownernumber,
         channel,
         pairlink,
         title
@@ -73,15 +67,10 @@ END:VCARD`
         hour < 20 ? '*`සුභ හැන්දෑවක් 🌅`*' :
                     '*`සුභ රාත්‍රියක් 🌌`*';
 
-      let host = os.hostname() || "render";
-      if (host.length === 12) host = "replit";
-      else if (host.length === 36) host = "heroku";
-      else if (host.length === 8) host = "koyeb";
-
       const aliveMessage = `_*Ｗᴇʟᴄᴏᴍᴇ Ｔᴏ Qᴜᴇᴇɴ Hᴀɴꜱɪ Ｍɪɴɪ Ｂᴏᴛ 🐼*_
 
 *╭───────────────●●✿◦*
-*┊• 🕊️️ \`ɢʀᴇᴇᴛ\` :-* ${greetings}
+*┊• 🕊️ \`ɢʀᴇᴇᴛ\` :-* ${greetings}
 *┊• 🕊️ \`ᴛɪᴍᴇ\` :-* *${time}*
 *┊• 🕊️ \`ᴅᴀᴛᴇ\` :-* *${date}*
 *┊• 🕊️ \`ᴏᴡɴᴇʀ\` :-* *${ownername}*
@@ -94,19 +83,7 @@ ${alivemsg}
 
 ${footer}`;
 
-      const buttons = [
-  {
-    buttonId: `${config.PREFIX}ping`,
-    buttonText: { displayText: "Pɪɴɢ Cᴍᴅ" },
-    type: 1
-  },
-  {
-    buttonId: `${config.PREFIX}menu`,
-    buttonText: { displayText: "Mᴇɴᴜ Cᴍᴅ" },
-    type: 1
-  }
-];
-
+      // 🎥 Alive Video
       await socket.sendMessage(
         sender,
         {
@@ -117,14 +94,12 @@ ${footer}`;
         { quoted: msg }
       );
 
+      // 🖼️ Alive Image
       await socket.sendMessage(
         sender,
         {
           image: { url: imageurl },
           caption: aliveMessage,
-          footer: footer,
-          buttons,
-          headerType: 4,
           contextInfo: {
             forwardedNewsletterMessageInfo: {
               newsletterJid: jid,
@@ -137,13 +112,42 @@ ${footer}`;
               mediaType: 1,
               sourceUrl: channel,
               thumbnailUrl: profileurl,
-              renderLargerThumbnail: false,
-              showAdAttribution: true
+              renderLargerThumbnail: true
             }
           }
         },
         { quoted: shala }
       );
+
+      // 📜 LIST MENU
+      await socket.sendMessage(sender, {
+        text: "🤖 *Queen Hansi Bot Menu*",
+        footer: "Select a command",
+        title: "QUEEN HANSI BOT",
+        buttonText: "OPEN MENU",
+        sections: [
+          {
+            title: "🤖 BOT COMMANDS",
+            rows: [
+              {
+                title: "⚡ Ping",
+                description: "Check bot speed",
+                rowId: `${config.PREFIX}ping`
+              },
+              {
+                title: "📜 Menu",
+                description: "Open bot menu",
+                rowId: `${config.PREFIX}menu`
+              },
+              {
+                title: "🟢 Alive",
+                description: "Check bot status",
+                rowId: `${config.PREFIX}alive`
+              }
+            ]
+          }
+        ]
+      }, { quoted: shala });
 
     } catch (e) {
       console.error(e);
