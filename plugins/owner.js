@@ -63,8 +63,8 @@ END:VCARD`
       // Owner vcards
       const vcard1 = `BEGIN:VCARD
 VERSION:3.0
-FN:Qᴜᴇᴇɴ Hᴀɴꜱɪ Dᴇᴠ
-ORG:Qᴜᴇᴇɴ Hᴀɴꜱɪ Dᴇᴠ
+FN:Gᴘᴛ Dᴜᴍɪʏʜ Dᴇᴠ
+ORG:Gᴘᴛ Dᴜᴍɪʏʜ Dᴇᴠ
 TEL;type=CELL;type=VOICE;waid=94769194547:+94 76 919 4547
 EMAIL:Qᴜᴇᴇɴʜᴀɴꜱɪᴍɪɴɪ@ɢᴍᴀɪʟ.ᴄᴏᴍ
 END:VCARD`;
@@ -81,7 +81,7 @@ END:VCARD`;
         sender,
         {
           contacts: {
-            displayName: "Bᴏᴛ Oᴡɴᴇʀꜱ",
+            displayName: "Hᴀɴꜱɪ Bᴏᴛ Oᴡɴᴇʀꜱ",
             contacts: [
               { vcard: vcard1 },
               { vcard: vcard2 }
