@@ -115,6 +115,11 @@ ${alivemsg}
 
 ${footer}`;
 
+      const buttons = [
+      { buttonId: `${config.PREFIX}ping`, buttonText: { displayText: "PING CMD" }, type: 1 },
+      { buttonId: `${config.PREFIX}menu`, buttonText: { displayText: "MENU CMD" }, type: 1 }
+    ];
+      
       // 🎥 Alive Video
       await socket.sendMessage(
         sender,
@@ -150,36 +155,6 @@ ${footer}`;
         },
         { quoted: shala }
       );
-
-      // 📜 LIST MENU
-      await socket.sendMessage(sender, {
-        text: "🤖 *Queen Hansi Bot Menu*",
-        footer: "Select a command",
-        title: "QUEEN HANSI BOT",
-        buttonText: "OPEN MENU",
-        sections: [
-          {
-            title: "🤖 BOT COMMANDS",
-            rows: [
-              {
-                title: "⚡ Ping",
-                description: "Check bot speed",
-                rowId: `${config.PREFIX}ping`
-              },
-              {
-                title: "📜 Menu",
-                description: "Open bot menu",
-                rowId: `${config.PREFIX}menu`
-              },
-              {
-                title: "🟢 Alive",
-                description: "Check bot status",
-                rowId: `${config.PREFIX}alive`
-              }
-            ]
-          }
-        ]
-      }, { quoted: shala });
 
     } catch (e) {
       console.error(e);
