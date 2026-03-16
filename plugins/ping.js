@@ -36,7 +36,13 @@ module.exports = {
           poll: {
             name: `🖥️ QUEEN HANSI BOT STATUS
 
-🤖 Bᴏᴛ Uᴘᴛɪᴍᴇ : ${uptime}`,
+🤖 Bᴏᴛ Uᴘᴛɪᴍᴇ : ${uptime}
+
+> *© Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴍᴅ ʙᴇᴛᴀ ᴡᴀ ʙᴏᴛ 1.0.0 ᴘʀᴏ*
+> *● ᴡᴀʙᴏᴛ ʙʏ Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴅᴇᴠ ●*
+
+> 🌐 Wᴇʙ : Cᴏᴍɪɴɢ Sᴏᴏɴ
+> 🎬 Tᴜᴛᴏʀɪᴀʟ : Cᴏᴍɪɴɢ Sᴏᴏɴ`,
 
             values: [
               `📶 Pɪɴɢ : ${ping} ᴍꜱ`,
