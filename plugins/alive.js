@@ -129,7 +129,7 @@ ${footer}`;
               body: pushname,
               mediaType: 1,
               sourceUrl: channel,
-              thumbnailUrl: imageurl,
+              thumbnailUrl: https://i.ibb.co/fzh9M5YH/74151f4df561.jpg,
               renderLargerThumbnail: true,
               showAdAttribution: true
             }
