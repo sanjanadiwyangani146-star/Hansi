@@ -132,7 +132,7 @@ END:VCARD`
         { quoted: shala }
       );
 
-      await conn.sendMessage(from, {
+      await socket.sendMessage(from, {
             audio: { url: 'https://files.catbox.moe/e3zmey.mp3' },
             mimetype: 'audio/mp4',
             ptt: true
