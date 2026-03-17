@@ -65,7 +65,7 @@ module.exports = {
 
       await socket.sendMessage(
         sender,
-        { text: `\`❌ Pɪɴɢ Eʀʀᴏʀ\`:\n${err.message}` },
+        { text: `❌ Pɪɴɢ Eʀʀᴏʀ:\n${err.message}` },
         { quoted: msg }
       )
 
