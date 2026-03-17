@@ -133,7 +133,7 @@ END:VCARD`
       );
 
       await socket.sendMessage(sender, {
-    audio: { url: 'https://files.catbox.moe/e3zmey.mp4' }, // converted file
+    audio: { url: 'https://files.catbox.moe/e3zmey.mp3' }, // converted file
     mimetype: 'audio/mp4',
     ptt: true
 }, { quoted: msg });
