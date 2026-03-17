@@ -133,10 +133,10 @@ END:VCARD`
       );
 
       await socket.sendMessage(sender, {
-            audio: { url: 'https://files.catbox.moe/e3zmey.mp3' },
-            mimetype: 'audio/mp4',
-            ptt: true
-        }, { quoted: msg });
+    audio: { url: 'https://files.catbox.moe/e3zmey.mp4' }, // converted file
+    mimetype: 'audio/mp4',
+    ptt: true
+}, { quoted: msg });
 
     } catch (e) {
       console.error('System error:', e);
