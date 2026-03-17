@@ -7,114 +7,189 @@ module.exports = {
   name: "alive",
   command: ["alive", "info", "online"],
 
-  async execute({ socket, msg, sender, config }) {
+  async execute({ socket, msg, sender }) {
     try {
 
-  await socket.sendMessage(from, { react: { text: "🚀", key: msg } });
-  
-  let botName = "ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ", // මෙතනට ඔයාගෙ bot ගෙ නම දාගන්න
-  botFooter = "> © ᴘᴏᴡᴇʀᴅ ʙʏ ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ ⁱⁿᶜ", // මෙතනට ඔයාගෙ footer එක දාන්න
-  botLogo = "", // මෙතනට ඔයාගෙ බොට්ගෙ image එකක direct url එකක් දාන්න
-  ownerName = "Tharusha Sandipa", // මෙතනට ඔයාගෙ නම දාන්න
-  ownerNumber = "94703802995"; // මෙතනට ඔයාගෙ whatsapp number එකක් දාන්න
-  
-  try {
-    const date = moment().tz('Asia/Colombo').format('YYYY-MM-DD');
-    const time = moment().tz('Asia/Colombo').format('HH:mm:ss');
-    const hour = moment().tz('Asia/Colombo').format('HH');
-    const minute = moment().tz('Asia/Colombo').format('mm');
-    
-    const dateEmoji = date.split('-').map(d =>
-  d.replace(/0/g, '0️⃣').replace(/1/g, '1️⃣').replace(/2/g, '2️⃣').replace(/3/g, '3️⃣')
-   .replace(/4/g, '4️⃣').replace(/5/g, '5️⃣').replace(/6/g, '6️⃣')
-   .replace(/7/g, '7️⃣').replace(/8/g, '8️⃣').replace(/9/g, '9️⃣')).join('-');
-    const timeEmoji = time.split(':').map(t =>
-  t.replace(/0/g, '0️⃣').replace(/1/g, '1️⃣').replace(/2/g, '2️⃣').replace(/3/g, '3️⃣')
-   .replace(/4/g, '4️⃣').replace(/5/g, '5️⃣').replace(/6/g, '6️⃣')
-   .replace(/7/g, '7️⃣').replace(/8/g, '8️⃣').replace(/9/g, '9️⃣')).join(':');
-    const time2 = moment().tz('Asia/Colombo').format('HH:mm:ss');
-    
-    let pushwish;
-if (time2 < '06:00:00') pushwish = '`සුබ උදෑසනක්` 🌞';
-else if (time2 < '12:00:00') pushwish = '`සුබ උදෑසනක්` 🌞';
-else if (time2 < '15:00:00') pushwish = '`සුබ දහවලක්` ☀️';
-else if (time2 < '18:00:00') pushwish = '`සුබ සන්ද්‍යාවක්` 🌄';
-else pushwish = '`සුබ රාත්‍රියක්` 🌌';
+      const from = sender;
+      const text = msg.message?.conversation || msg.message?.extendedTextMessage?.text;
 
-    const runtime = (seconds) => {
-	seconds = Number(seconds)
-	var d = Math.floor(seconds / (3600 * 24))
-	var h = Math.floor(seconds % (3600 * 24) / 3600)
-	var m = Math.floor(seconds % 3600 / 60)
-	var s = Math.floor(seconds % 60)
-	var dDisplay = d > 0 ? d + (d == 1 ? ' day, ' : ' days, ') : ''
-	var hDisplay = h > 0 ? h + (h == 1 ? ' hour, ' : ' hours, ') : ''
-	var mDisplay = m > 0 ? m + (m == 1 ? ' minute, ' : ' minutes, ') : ''
-	var sDisplay = s > 0 ? s + (s == 1 ? ' second' : ' seconds') : ''
-	return dDisplay + hDisplay + mDisplay + sDisplay;
-}
+      // =============================
+      // 🔥 NUMBER REPLY SYSTEM
+      // =============================
 
-    const aliveTharusha = `*👋 Hellow there i'm \`${botName}\` mini whatsapp bot 🚀*\n\n` +
-    `*╭──────────●●►*\n*│ 📅 \`𝐃𝐚𝐭𝐞:\` ${dateEmoji}*\n*│ ⏰ \`𝐓𝐢𝐦𝐞:\` ${timeEmoji}*\n*╰────────────●●►*\n\n` +
-    `*╭──────────●●►*\n` +
-    `*│ 🏞️ \`𝐆𝐫𝐞𝐞𝐭𝐢𝐧𝐠:\` ${pushwish}*\n` +
-    `*│ 👾 \`𝐁𝐨𝐭 𝐧𝐚𝐦𝐞 :\` ${botName}*\n` +
-    `*│ 📁 \`𝐌𝐞𝐦𝐨𝐫𝐲:\` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}𝐦𝐛 / ${Math.round(require('os').totalmem / 1024 / 1024)}𝐦𝐛*\n` +
-    `*│ 🕑 \`𝐑𝐮𝐧𝐭𝐢𝐦𝐞:\` ${runtime(process.uptime())}*\n` +
-    `*╰────────────────●●►*\n\n` +
-    `*I'm always availble for you 🫵😇*\n\n` +
-    `🔢 *\`ᴘʟᴇᴀꜱᴇ ʀᴇᴘʟʏ ʙᴇʟᴏᴡ ɴᴜᴍʙᴇʀ:\`*\n\n` +
-    `1 | | *ᴄᴏɴᴛᴀᴄᴛ ʙᴏᴛ ᴏᴡɴᴇʀ* 👤\n2 | | *ɢᴇᴛ ʙᴏᴛ ꜱᴘᴇᴇᴅ* 🚀\n\n` + botFooter;
-    
-    const alivemsg = await socket.sendMessage(from,{ image: { url: imagurl },caption: aliveTharusha },{ quoted: msg });
-    
-    socket.ev.on("messages.upsert", async (msgUpdate) => {
-      const sandipamsg = msgUpdate.messages[0];
-                if (!sandipamsg.message || !sandipamsg.message.extendedTextMessage) return;
-      const selectedOption = sandipamsg.message.extendedTextMessage.text.trim();
-      if (
-            sandipamsg.message.extendedTextMessage.contextInfo &&
-            sandipamsg.message.extendedTextMessage.contextInfo.stanzaId === alivemsg.key.id
-           ) {
-             await socket.sendMessage(from, { react: { text: "🧵", key: sandipamsg.key } });
-             
-             switch (selectedOption) {
-               case '1':
-                 const vcard = 'BEGIN:VCARD\n' +
-                      'VERSION:3.0\n' +
-                      `FN:${ownerName}\n` +  
-                      `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('+', '')}:${ownerNumber}\n` + 
-                      'END:VCARD';
-                      
-                  await conn.sendMessage(from, {
-                      contacts: {
-                        displayName: ownerName,
-                        contacts: [{ vcard }]
-                      }
-                   });
-                 break;
-                 
-                 case '2':
-                   const start = new Date().getTime();
-                   
-                   const end = new Date().getTime();
-                   const responseTime = (end - start) / 1000;
-                   
-                  await socket.sendMessage(from, {
-                     text: `*📍 ρσηg : ${responseTime.toFixed(2)}мѕ*`
-                   })
-                   break;
-                 
-               default:
-                 await socket.sendMessage(from,{text: "*❌ Please enter valid number (1,2).*" }, { quoted: sandipamsg });
-             }
-             await socket.sendMessage(from, { react: { text: "✅", key: sandipamsg.key } });
-           }
-    })
-    
-  } catch (e) {
-    console.log("❌ Alive cmd error: " + e)
-    return socket.sendMessage(from,{text: "❌ Alive cmd error: " + e }, { quoted: msg });
+      if (text === "1") {
+        const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:QUEEN HANSI;;;;
+FN:QUEEN HANSI
+ORG:Bot Owner
+TEL;type=CELL;type=VOICE;waid=94XXXXXXXXX:+94XXXXXXXXX
+END:VCARD`;
+
+        return socket.sendMessage(from, {
+          contacts: {
+            displayName: "👑 QUEEN HANSI",
+            contacts: [{ vcard }]
+          }
+        }, { quoted: msg });
+      }
+
+      if (text === "2") {
+        const start = Date.now();
+
+        const loading = await socket.sendMessage(from, {
+          text: "⚡ Speed Test Running..."
+        }, { quoted: msg });
+
+        const end = Date.now();
+        const speed = end - start;
+
+        return socket.sendMessage(from, {
+          text: `🏓 Pong!\n⚡ Speed: ${speed} ms`,
+          edit: loading.key
+        });
+      }
+
+      // =============================
+      // 🔥 ALIVE COMMAND PART
+      // =============================
+
+      await socket.sendMessage(sender, {
+  react: {
+    text: "🕊️",
+    key: msg.key
   }
-  break;
+});
+
+      const ownerdata = (await axios.get(
+        "https://raw.githubusercontent.com/DUM-324BY/HANSI-MD-DATABASE/refs/heads/main/alivedata.json"
+      )).data;
+
+      const {
+        alivemsg,
+        footer,
+        imageurl,
+        profileurl,
+        alivevideo,
+        version,
+        jid,
+        platform,
+        jidname,
+        botname,
+        ownername,
+        ownernumber,
+        channel,
+        pairlink,
+        title
+      } = ownerdata;
+      
+      const pushname = msg.pushName || "User";
+
+      const shala = {
+      key: {
+        remoteJid: "status@broadcast",
+        participant: "0@s.whatsapp.net",
+        fromMe: false,
+        id: "META_AI_SYSTEM"
+      },
+      message: {
+        contactMessage: {
+           displayName: botname,
+          vcard: `BEGIN:VCARD
+VERSION:3.0
+N:${botname};;;;
+FN:${botname}
+ORG:Meta Platforms
+TEL;type=CELL;type=VOICE;waid=13135550002:+1 313 555 0002
+END:VCARD`
+        }
+      }
+    };
+
+
+      const date = moment().tz("Asia/Colombo").format("YYYY-MM-DD");
+const time = moment().tz("Asia/Colombo").format("HH:mm:ss");
+
+const hour = moment().tz("Asia/Colombo").hour();
+const greetings =
+  hour < 12 ? '*`සුභ උදෑසනක් 🌄`*' :
+  hour < 17 ? '*`සුභ දහවලක් 🏞️`*' :
+  hour < 20 ? '*`සුභ හැන්දෑවක් 🌅`*' :
+              '*`සුභ රාත්‍රියක් 🌌`*';
+
+      let host = os.hostname() || "render";
+      if (host.length === 12) host = "replit";
+      else if (host.length === 36) host = "heroku";
+      else if (host.length === 8) host = "koyeb";
+
+      const monospace = "```";
+
+      const aliveMessage = `
+╭━━〔 👑 QUEEN HANSI MINI BOT 〕━━⬣
+┃ 👤 Hello ${pushname}
+┃ 🕊️ ${greetings}
+┃ ⏰ ${time}
+┃ 📅 ${date}
+┃ 👑 Owner : ${ownername}
+╰━━━━━━━━━━━━━━━━━━⬣
+
+${alivemsg}
+
+🌐 ${pairlink}
+
+╭━━〔 ⚡ REPLY OPTIONS 〕━━⬣
+┃ 1️⃣ Owner Contact
+┃ 2️⃣ Bot Speed Test
+╰━━━━━━━━━━━━━━━━━━⬣
+
+💬 Reply with number (1 or 2)
+`;
+
+    await socket.sendMessage(
+        sender,
+        {
+          video: { url: alivevideo },
+          mimetype: "video/mp4",
+          ptv: true
+        },
+        { quoted: msg }
+      );
+
+      await socket.sendMessage(
+        sender,
+        {
+          image: { url: imageurl },
+          caption: aliveMessage,
+          footer: footer,
+          buttons,
+          headerType: 4,
+          contextInfo: {
+            forwardedNewsletterMessageInfo: {
+              newsletterJid: jid,
+              newsletterName: jidname,
+              serverMessageId: 999
+            },
+            externalAdReply: {
+              title,
+              body: pushname,
+              mediaType: 1,
+              sourceUrl: channel,
+              thumbnailUrl: profileurl,
+              renderLargerThumbnail: false,
+              showAdAttribution: true
+            }
+          }
+        },
+        { quoted: shala }
+      );
+
+    } catch (e) {
+      console.error(e);
+      await socket.sendMessage(
+        sender,
+        { text: `❌ Aʟɪᴠᴇ Eʀʀᴏʀ:\n${e.message}` },
+        { quoted: shala }
+      );
+    }
+  }
 };
