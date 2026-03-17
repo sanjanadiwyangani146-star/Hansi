@@ -7,56 +7,12 @@ module.exports = {
   name: "alive",
   command: ["alive", "info", "online"],
 
-  async execute({ socket, msg, sender }) {
+  async execute({ socket, msg, sender, config }) {
     try {
-
-      const from = sender;
-      const text = msg.message?.conversation || msg.message?.extendedTextMessage?.text;
-
-      // =============================
-      // 🔥 NUMBER REPLY SYSTEM
-      // =============================
-
-      if (text === "1") {
-        const vcard = `BEGIN:VCARD
-VERSION:3.0
-N:QUEEN HANSI;;;;
-FN:QUEEN HANSI
-ORG:Bot Owner
-TEL;type=CELL;type=VOICE;waid=94769490765:+94769490765
-END:VCARD`;
-
-        return socket.sendMessage(from, {
-          contacts: {
-            displayName: "👑 QUEEN HANSI",
-            contacts: [{ vcard }]
-          }
-        }, { quoted: msg });
-      }
-
-      if (text === "2") {
-        const start = Date.now();
-
-        const loading = await socket.sendMessage(from, {
-          text: "⚡ Speed Test Running..."
-        }, { quoted: msg });
-
-        const end = Date.now();
-        const speed = end - start;
-
-        return socket.sendMessage(from, {
-          text: `🏓 Pong!\n⚡ Speed: ${speed} ms`,
-          edit: loading.key
-        });
-      }
-
-      // =============================
-      // 🔥 ALIVE COMMAND PART
-      // =============================
 
       await socket.sendMessage(sender, {
   react: {
-    text: "🕊️",
+    text: "⚡",
     key: msg.key
   }
 });
@@ -124,28 +80,28 @@ const greetings =
 
       const monospace = "```";
 
-      const aliveMessage = `
-╭━━〔 👑 QUEEN HANSI MINI BOT 〕━━⬣
-┃ 👤 Hello ${pushname}
-┃ 🕊️ ${greetings}
-┃ ⏰ ${time}
-┃ 📅 ${date}
-┃ 👑 Owner : ${ownername}
-╰━━━━━━━━━━━━━━━━━━⬣
+      const aliveMessage = `_*Ｗᴇʟᴄᴏᴍᴇ Ｔᴏ Qᴜᴇᴇɴ Hᴀɴꜱɪ Ｍɪɴɪ Ｂᴏᴛ 🐼"*_
+
+*╭───────────────●●✿◦*
+*┊• 🌄 \`ɢʀᴇᴇᴛ\` :-* ${greetings}
+*┊• ️🕝 \`ᴛɪᴍᴇ\` :-* *${time}*
+*┊• 📆 \`ᴅᴀᴛᴇ\` :-* *${date}*
+*┊• 🈲 \`ᴏᴡɴᴇʀ\` :-* *${ownername}*
+*╰───────────────●●✿◦*
 
 ${alivemsg}
 
-🌐 ${pairlink}
+*🌐 Qᴜᴇᴇɴ Hᴀɴꜱɪ Mɪɴɪ Bᴏᴛ Wᴇʙꜱɪᴛᴇ :*
+> ${pairlink}
 
-╭━━〔 ⚡ REPLY OPTIONS 〕━━⬣
-┃ 1️⃣ Owner Contact
-┃ 2️⃣ Bot Speed Test
-╰━━━━━━━━━━━━━━━━━━⬣
+╭─「 💕 *ᴅᴇᴠᴇʟᴏᴘᴇʀ* 」
+│ 👨‍💻 » Qᴜᴇᴇɴ ʜᴀɴꜱɪ ᴅᴇᴠ
+│ 🌟 » ɢᴘᴛ ᴅᴜᴍɪʏʜ ᴅᴇᴠ
+╰──────────────────
 
-💬 Reply with number (1 or 2)
-`;
+${footer}`;
 
-    await socket.sendMessage(
+      await socket.sendMessage(
         sender,
         {
           video: { url: alivevideo },
@@ -173,13 +129,13 @@ ${alivemsg}
               body: pushname,
               mediaType: 1,
               sourceUrl: channel,
-              thumbnailUrl: profileurl,
-              renderLargerThumbnail: false,
+              thumbnailUrl: imageurl,
+              renderLargerThumbnail: true,
               showAdAttribution: true
             }
           }
         },
-        { quoted: msg }
+        { quoted: shala }
       );
 
     } catch (e) {
@@ -187,8 +143,9 @@ ${alivemsg}
       await socket.sendMessage(
         sender,
         { text: `❌ Aʟɪᴠᴇ Eʀʀᴏʀ:\n${e.message}` },
-        { quoted: msg }
+        { quoted: shala }
       );
     }
   }
 };
+
