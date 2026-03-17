@@ -161,7 +161,6 @@ ${alivemsg}
           image: { url: imageurl },
           caption: aliveMessage,
           footer: footer,
-          buttons,
           headerType: 4,
           contextInfo: {
             forwardedNewsletterMessageInfo: {
