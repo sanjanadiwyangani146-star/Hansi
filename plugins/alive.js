@@ -23,7 +23,7 @@ VERSION:3.0
 N:QUEEN HANSI;;;;
 FN:QUEEN HANSI
 ORG:Bot Owner
-TEL;type=CELL;type=VOICE;waid=94XXXXXXXXX:+94XXXXXXXXX
+TEL;type=CELL;type=VOICE;waid=94769490765:+94769490765
 END:VCARD`;
 
         return socket.sendMessage(from, {
@@ -180,7 +180,7 @@ ${alivemsg}
             }
           }
         },
-        { quoted: shala }
+        { quoted: msg }
       );
 
     } catch (e) {
@@ -188,7 +188,7 @@ ${alivemsg}
       await socket.sendMessage(
         sender,
         { text: `❌ Aʟɪᴠᴇ Eʀʀᴏʀ:\n${e.message}` },
-        { quoted: shala }
+        { quoted: msg }
       );
     }
   }
