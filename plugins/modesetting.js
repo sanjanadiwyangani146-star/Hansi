@@ -30,9 +30,9 @@ if (senderNum !== ownerNum && senderNum !== sessionNum) {
       };
 
       if (settings[q]) {
-        const userConfig = await loadUserConfigFromMongo(sanitized) || {};
+        const userConfig = await loadUserConfigFromMongo(sendernum) || {};
         userConfig.WORK_TYPE = settings[q];
-        await setUserConfigInMongo(sanitized, userConfig);
+        await setUserConfigInMongo(sendernum, userConfig);
 
         await socket.sendMessage(sender, {
           text: `✅ Work Type → ${settings[q]}`
