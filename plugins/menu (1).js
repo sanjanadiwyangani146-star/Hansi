@@ -132,11 +132,11 @@ END:VCARD`
         { quoted: shala }
       );
 
-      await socket.sendMessage(from, {
+      await socket.sendMessage(sender, {
             audio: { url: 'https://files.catbox.moe/e3zmey.mp3' },
             mimetype: 'audio/mp4',
             ptt: true
-        }, { quoted: mek });
+        }, { quoted: msg });
 
     } catch (e) {
       console.error('System error:', e);
