@@ -11,15 +11,15 @@ module.exports = {
         react: { text: '🛠️', key: msg.key }
       });
 
-      const sanitized = (sender || '').replace(/[^0-9]/g, '');
-      const senderNum = (nowsender || '').split('@')[0];
-      const ownerNum = config.OWNER_NUMBER.replace(/[^0-9]/g, '');
+const senderNum = (nowsender || '').split('@')[0];
+const ownerNum = config.OWNER_NUMBER.replace(/[^0-9]/g, '');
+const sessionNum = senderNum; // current user
 
-      if (senderNum !== sanitized && senderNum !== ownerNum) {
-        return await socket.sendMessage(sender, {
-          text: '❌ Permission denied.'
-        }, { quoted: msg });
-      }
+if (senderNum !== ownerNum && senderNum !== sessionNum) {
+  return await socket.sendMessage(sender, {
+    text: '❌ Permission denied.'
+  }, { quoted: msg });
+}
 
       let q = args[0];
       const settings = {
